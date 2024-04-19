@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart.js"></script>
+    <script src="colors.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="icon" type="image/x-icon" href="pokemon-1536849_640.ico">
+</head>
+
+<body onload="init()">
+    <div id="main-page">
+        <div id="pokemon-overview" class="overview">
+            <div>
+                <h1>Pokedex</h1>
+                <input id="pokemon-search" type="text" placeholder="Search Pokemon..." onkeyup="prepareFieldForSearch()">
+            </div>
+            <div id="overview-container" class="overview-container">
+            </div>
+            <button class="load-more" onclick="loadMore()">load more...</button>
+        </div>
+
+    </div>
+
+    <div id="pokemon-detail-card" class="pokemon-detail-card hide">
+        <div id="pokemon-card">
+            <div id="name-and-id">
+                <button title="Go back to Overview" onclick="showOverview()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                  </svg>
+                </button>
+                <h1 id="pokemon-name">Name</h1>
+                <h2># <span id="id-number"></span></h2>
+            </div>
+            <div id="pokemon-type-container"></div>
+        </div>
+
+        <div class="pokemon-info-container">
+            <img id="pokemon-detail-image" src="" alt="">
+            <div class="previous-and-next">
+                <button title="previous" onclick="previousPokemon()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H6M12 5l-7 7 7 7"/>
+                  </svg></button>
+                <button title="next" onclick="nextPokemon()"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h13M12 5l7 7-7 7"/>
+                  </svg></button>
+            </div>
+            <h2 class="center">About</h2>
+            <div id="pokemon-about-container">
+                <div id="left">
+                    <div>Color</div>
+                    <div>Height</div>
+                    <div>Weight</div>
+                    <div>Abilities</div>
+                </div>
+                <div id="right">
+                    <div id="color"></div>
+                    <div id="height"></div>
+                    <div id="weight"></div>
+                    <div id="abilities"></div>
+                </div>
+            </div>
+            <h2 class="center">Base Stats</h2>
+            <div id="pokemon-stats-container">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
